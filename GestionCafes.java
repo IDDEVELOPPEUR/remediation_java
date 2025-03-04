@@ -1,23 +1,38 @@
+import java.util.Properties;
 import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 
 public class GestionCafes {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner clav = new Scanner(System.in);
         try {
+              // ici j'instancifie la connection avec une properties
+              InputStream inputDe = new FileInputStream("base.properties");
+                
+              Properties prop = new Properties();
+              //je charge les proprietes
 
-            String base = "etudiant_cafe";
-            String user = "root";
-            String passe = "passer";
+              prop.load(inputDe);
+
+
+              //les variables qui porteront les proprietes
+              String url = prop.getProperty("Url");
+              String user = prop.getProperty("User");
+              String passe = prop.getProperty("Passe");
+              String driver = prop.getProperty("Driver");
+              
+
 
             try {
-                // ici j'instancifie la connection avec une properties
-                
+              
 
 
 
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + base, user, passe);
+                Class.forName(driver);
+                Connection con = DriverManager.getConnection( url, user, passe);
                 System.out.println("connection est passée avec succès !");
                 Statement stat = con.createStatement();
                 // Menu
