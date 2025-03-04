@@ -51,10 +51,10 @@ public class GestionCafes {
                                                         "c JOIN ETUDIANTS p ON p.ID=c.ETUDIANT WHERE c.NB_TASSES=(SELECT\r\n" + //
                                                         "MAX(NB_TASSES) FROM CONSOS_CAFE )");
                         while (resultat.next()) {
-                            System.out.print("Prenom"+resultat.getString("PRENOM"));
-                            System.out.print("Nom  "+resultat.getString("NOM"));
-                            System.out.print("Nbr tasses " + resultat.getInt("NB_TASSES"));
-                            System.out.print("Numéro Semaine "+resultat.getString("NO_SEMAINE"));
+                            System.out.println("Prenom : "+resultat.getString("PRENOM"));
+                            System.out.println("Nom: "+resultat.getString("NOM"));
+                            System.out.println("Nbr tasses: " + resultat.getInt("NB_TASSES"));
+                            System.out.println("Numéro Semaine: "+resultat.getString("NO_SEMAINE"));
                         }
 
                         break;
