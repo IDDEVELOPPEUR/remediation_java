@@ -11,6 +11,11 @@ public class GestionCafes {
             String passe = "passer";
 
             try {
+                // ici j'instancifie la connection avec une properties
+                
+
+
+
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + base, user, passe);
                 System.out.println("connection est passée avec succès !");
@@ -73,7 +78,7 @@ public class GestionCafes {
                            System.out.println("Votre achat est bien enregistré");
                            break;
                     default:
-                    System.out.print("METTEZ LE BON NUMERO :");
+                    System.out.print("LE Numéro donné ne figure pas sur la liste !");
                         break;
                 }// je ferm ma connexion
                 con.close();

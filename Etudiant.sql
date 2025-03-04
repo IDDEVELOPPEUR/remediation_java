@@ -25,4 +25,18 @@ select * from consos_cafe ;
 
 
 
+# URL de la base de données  
+db.url=jdbc:mysql://localhost:3306/votre_base_de_données  
+
+# Nom d'utilisateur de la base de données  
+db.user=your_username  
+
+# Mot de passe de la base de données  
+db.password=your_password  
+
+# Driver de la base de données  
+db.driver=com.mysql.cj.jdbc.Driver  
+
+
+
 
