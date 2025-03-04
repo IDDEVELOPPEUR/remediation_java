@@ -58,7 +58,7 @@ public class GestionCafes {
                             System.out.println("Nombre tasses: "+result.getInt("NB_TASSES"));
                            }
                             break;
-                    
+                
                     case 4:
                            System.out.print("Mettez le numéro de la semaine:");
                             int numSem=clav.nextInt();
@@ -75,14 +75,17 @@ public class GestionCafes {
                     default:
                     System.out.print("METTEZ LE BON NUMERO :");
                         break;
-                }
-
+                }// je ferm ma connexion
+                con.close();
             } catch (SQLException e) {
                 e.printStackTrace();
+                
             }
         } catch (ClassNotFoundException e) {
 
             e.printStackTrace();
+            
         }
+    
     }
 }
